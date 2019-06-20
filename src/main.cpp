@@ -1,13 +1,4 @@
-#include <Arduino.h>
-
-bool infochecked;
-String DataStream;
-unsigned char type;
-unsigned char nowhour;
-unsigned char nowminute;
-
 #include "pillclasses.h"
-
 
 void SerialReader(){
   Serial.begin(115200);

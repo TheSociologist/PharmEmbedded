@@ -1,4 +1,17 @@
+#include <Arduino.h>
 #include "structures.h"
+
+bool infochecked;
+String DataStream;
+unsigned char type;
+unsigned char nowhour;
+unsigned char nowminute;
+
+struct Time{
+  unsigned char hour;
+  unsigned char minute;
+};
+
 
 class Pill{
   private: 
@@ -185,4 +198,17 @@ class QuadPill : Pill{
       delimiterSwitcher();
       time4.minute = DataStream.substring(delimiterOne + 1, delimiterTwo).toInt();
     }
+};
+
+class AllotPill : Pill{
+    private: 
+        unsigned char doses;
+
+    public: 
+        bool infoverified;
+        AllotPill(){
+            baseParser();
+            doses = DataStream.substring(delimiterOne + 1, delimiterTwo).toInt();
+        };
+        
 };
