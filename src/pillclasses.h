@@ -1,5 +1,4 @@
 #include <Arduino.h>
-#include "structures.h"
 
 bool infochecked;
 String DataStream;
